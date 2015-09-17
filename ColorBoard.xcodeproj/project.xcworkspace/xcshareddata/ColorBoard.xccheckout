@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>43398F26-58B3-42FC-A6AA-46465C9BA64D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>171FAE77E01640D782AB15689CF08495E08E6E46</key>
+		<string>https://github.com/jroland81093/ColorBoard.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ColorBoard.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>171FAE77E01640D782AB15689CF08495E08E6E46</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jroland81093/ColorBoard.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>171FAE77E01640D782AB15689CF08495E08E6E46</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>171FAE77E01640D782AB15689CF08495E08E6E46</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ColorBoard</string>
+		</dict>
+	</array>
+</dict>
+</plist>

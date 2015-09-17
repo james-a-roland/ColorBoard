@@ -13,6 +13,7 @@
 		4CF156D71BAB534F00B3DAA6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF156D61BAB534F00B3DAA6 /* Images.xcassets */; };
 		4CF156DA1BAB534F00B3DAA6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF156D81BAB534F00B3DAA6 /* LaunchScreen.xib */; };
 		4CF156E61BAB534F00B3DAA6 /* ColorBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF156E51BAB534F00B3DAA6 /* ColorBoardTests.swift */; };
+		4CF156F01BAB58DA00B3DAA6 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF156EF1BAB58DA00B3DAA6 /* ColorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		4CF156DF1BAB534F00B3DAA6 /* ColorBoardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorBoardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF156E41BAB534F00B3DAA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CF156E51BAB534F00B3DAA6 /* ColorBoardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBoardTests.swift; sourceTree = "<group>"; };
+		4CF156EF1BAB58DA00B3DAA6 /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +81,9 @@
 			children = (
 				4CF156CF1BAB534F00B3DAA6 /* AppDelegate.swift */,
 				4CF156D11BAB534F00B3DAA6 /* ViewController.swift */,
-				4CF156D31BAB534F00B3DAA6 /* Main.storyboard */,
+				4CF156F21BAB58F000B3DAA6 /* Model */,
+				4CF156F31BAB58FC00B3DAA6 /* View */,
+				4CF156F11BAB58E400B3DAA6 /* Controller */,
 				4CF156D61BAB534F00B3DAA6 /* Images.xcassets */,
 				4CF156D81BAB534F00B3DAA6 /* LaunchScreen.xib */,
 				4CF156CD1BAB534F00B3DAA6 /* Supporting Files */,
@@ -110,6 +114,29 @@
 				4CF156E41BAB534F00B3DAA6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4CF156F11BAB58E400B3DAA6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4CF156EF1BAB58DA00B3DAA6 /* ColorViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4CF156F21BAB58F000B3DAA6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4CF156D31BAB534F00B3DAA6 /* Main.storyboard */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4CF156F31BAB58FC00B3DAA6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CF156D21BAB534F00B3DAA6 /* ViewController.swift in Sources */,
+				4CF156F01BAB58DA00B3DAA6 /* ColorViewController.swift in Sources */,
 				4CF156D01BAB534F00B3DAA6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
