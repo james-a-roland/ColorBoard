@@ -13,10 +13,16 @@ class ColorViewController: UIViewController {
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
-    @IBOutlet weak var textField: UITextField!
+    
+    var existingColor = false
+    var currentColorDescription: ColorDescription!
     
     @IBAction func dismiss(sender: AnyObject) {
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func viewDidLoad() {
+        self.changeColor(self)
     }
     
     
