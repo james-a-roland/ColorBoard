@@ -13,6 +13,7 @@ class ColorViewController: UIViewController {
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
+    @IBOutlet weak var textField: UITextField!
     
     var existingColor = false
     var currentColorDescription: ColorDescription!
@@ -22,7 +23,34 @@ class ColorViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        self.changeColor(self)
+        super.viewDidLoad()
+        let color = currentColorDescription.color
+        
+        var red: CGFloat = 0.0
+        var green: CGFloat = 0.0
+        var blue: CGFloat = 0.0
+        color.getRed(&red, green: &green, blue: &blue, alpha: nil)
+        
+        redSlider.value = Float(red)
+        greenSlider.value = Float(green)
+        blueSlider.value = Float(blue)
+        
+        view.backgroundColor = color
+        textField.text = currentColorDescription.name
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        if (existingColor) {
+            navigationItem.rightBarButtonItem = nil
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        currentColorDescription.color = view.backgroundColor ?? UIColor.whiteColor()
+        currentColorDescription.name = textField.text
     }
     
     

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VmC-Uh-9zC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +21,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="E1M-yW-geD" kind="show" id="vJZ-TV-3yX"/>
+                                    <segue destination="E1M-yW-geD" kind="show" identifier="ExistingColor" id="vJZ-TV-3yX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -34,7 +35,7 @@
                     <navigationItem key="navigationItem" title="Colors" id="bKf-xf-ygB">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NA4-xG-4wu">
                             <connections>
-                                <segue destination="bck-vO-9jJ" kind="presentation" id="QY5-VS-fjZ"/>
+                                <segue destination="bck-vO-9jJ" kind="presentation" identifier="NewColor" id="QY5-VS-fjZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -56,6 +57,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ilf-p7-aWk">
+                                <rect key="frame" x="99" y="205" width="403" height="31"/>
+                                <connections>
+                                    <action selector="changeColor:" destination="RRH-VP-mRk" eventType="valueChanged" id="HAj-Hk-sEI"/>
+                                </connections>
+                            </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dmC-zK-EYN">
                                 <rect key="frame" x="99" y="285" width="403" height="31"/>
                                 <connections>
@@ -86,20 +93,22 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ilf-p7-aWk">
-                                <rect key="frame" x="99" y="205" width="403" height="31"/>
-                                <connections>
-                                    <action selector="changeColor:" destination="RRH-VP-mRk" eventType="valueChanged" id="HAj-Hk-sEI"/>
-                                </connections>
-                            </slider>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="31Q-uv-eS5">
+                                <rect key="frame" x="252" y="110" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="dmC-zK-EYN" firstAttribute="width" secondItem="ilf-p7-aWk" secondAttribute="width" id="0IL-te-D83"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ilf-p7-aWk" secondAttribute="trailing" constant="84" id="279-Nr-VSd"/>
+                            <constraint firstItem="YA6-Pj-20x" firstAttribute="top" secondItem="31Q-uv-eS5" secondAttribute="bottom" constant="36" id="4qJ-Dd-sGI"/>
+                            <constraint firstItem="31Q-uv-eS5" firstAttribute="width" secondItem="ilf-p7-aWk" secondAttribute="height" multiplier="97:30" id="8Bb-oo-sU3"/>
                             <constraint firstItem="ilf-p7-aWk" firstAttribute="top" secondItem="YA6-Pj-20x" secondAttribute="bottom" constant="8" id="FIp-hc-yFu"/>
                             <constraint firstItem="dmC-zK-EYN" firstAttribute="centerX" secondItem="i1I-5i-RRY" secondAttribute="centerX" constant="0.5" id="GoY-na-DcO"/>
                             <constraint firstItem="fWp-qX-QcE" firstAttribute="centerX" secondItem="dmC-zK-EYN" secondAttribute="centerX" id="M5P-Ib-Hgv"/>
+                            <constraint firstItem="31Q-uv-eS5" firstAttribute="centerX" secondItem="YA6-Pj-20x" secondAttribute="centerX" constant="0.75" id="MTI-a1-dV7"/>
                             <constraint firstItem="ilf-p7-aWk" firstAttribute="leading" secondItem="cXz-cb-aML" secondAttribute="leadingMargin" constant="85" id="Oqv-CV-8yG"/>
                             <constraint firstItem="YA6-Pj-20x" firstAttribute="centerX" secondItem="ilf-p7-aWk" secondAttribute="centerX" constant="-0.5" id="PeH-n9-UON"/>
                             <constraint firstItem="fWp-qX-QcE" firstAttribute="centerX" secondItem="h1q-Ki-tcc" secondAttribute="centerX" constant="0.5" id="STz-A9-7vT"/>
@@ -123,6 +132,7 @@
                         <outlet property="blueSlider" destination="fWp-qX-QcE" id="ljS-Pw-Hhy"/>
                         <outlet property="greenSlider" destination="dmC-zK-EYN" id="CDd-tD-OXK"/>
                         <outlet property="redSlider" destination="ilf-p7-aWk" id="vpC-NS-yeh"/>
+                        <outlet property="textField" destination="31Q-uv-eS5" id="SdU-l3-ysr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRH-VP-mRk" userLabel="First Responder" sceneMemberID="firstResponder"/>

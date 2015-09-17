@@ -25,4 +25,28 @@ class PaletteViewController : UITableViewController {
         cell.textLabel?.text = colors[indexPath.row].name
         return cell
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "NewColor" {
+            let newColorDescription = ColorDescription()
+            colors.append(newColorDescription)
+            
+            if let nc = segue.destinationViewController as? UINavigationController {
+                if let cvc = nc.topViewController as? ColorViewController {
+                    cvc.currentColorDescription = newColorDescription
+                    cvc.existingColor = false
+                }
+            }
+        }
+        else if segue.identifier == "ExistingColor" {
+            if let row = tableView.indexPathForSelectedRow()?.row {
+                let colorDescription = colors[row]
+                
+                if let cvc = segue.destinationViewController as? ColorViewController {
+                    cvc.currentColorDescription = colorDescription
+                    cvc.existingColor = true
+                }
+            }
+        }
+    }
 }
