@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VmC-Uh-9zC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Colors-->
@@ -100,7 +101,62 @@
                     <view key="view" contentMode="scaleToFill" id="cXz-cb-aML">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dmC-zK-EYN">
+                                <rect key="frame" x="99" y="285" width="403" height="31"/>
+                                <connections>
+                                    <action selector="changeColor:" destination="RRH-VP-mRk" eventType="valueChanged" id="Gpm-dZ-kaL"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fWp-qX-QcE">
+                                <rect key="frame" x="99" y="365" width="403" height="31"/>
+                                <connections>
+                                    <action selector="changeColor:" destination="RRH-VP-mRk" eventType="valueChanged" id="bCU-EB-L2h"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YA6-Pj-20x">
+                                <rect key="frame" x="284" y="176" width="31.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1I-5i-RRY">
+                                <rect key="frame" x="276" y="256" width="46.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1q-Ki-tcc">
+                                <rect key="frame" x="283" y="336" width="34.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ilf-p7-aWk">
+                                <rect key="frame" x="99" y="205" width="403" height="31"/>
+                                <connections>
+                                    <action selector="changeColor:" destination="RRH-VP-mRk" eventType="valueChanged" id="HAj-Hk-sEI"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dmC-zK-EYN" firstAttribute="width" secondItem="ilf-p7-aWk" secondAttribute="width" id="0IL-te-D83"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ilf-p7-aWk" secondAttribute="trailing" constant="84" id="279-Nr-VSd"/>
+                            <constraint firstItem="ilf-p7-aWk" firstAttribute="top" secondItem="YA6-Pj-20x" secondAttribute="bottom" constant="8" id="FIp-hc-yFu"/>
+                            <constraint firstItem="dmC-zK-EYN" firstAttribute="centerX" secondItem="i1I-5i-RRY" secondAttribute="centerX" constant="0.5" id="GoY-na-DcO"/>
+                            <constraint firstItem="fWp-qX-QcE" firstAttribute="centerX" secondItem="dmC-zK-EYN" secondAttribute="centerX" id="M5P-Ib-Hgv"/>
+                            <constraint firstItem="ilf-p7-aWk" firstAttribute="leading" secondItem="cXz-cb-aML" secondAttribute="leadingMargin" constant="85" id="Oqv-CV-8yG"/>
+                            <constraint firstItem="YA6-Pj-20x" firstAttribute="centerX" secondItem="ilf-p7-aWk" secondAttribute="centerX" constant="-0.5" id="PeH-n9-UON"/>
+                            <constraint firstItem="fWp-qX-QcE" firstAttribute="centerX" secondItem="h1q-Ki-tcc" secondAttribute="centerX" constant="0.5" id="STz-A9-7vT"/>
+                            <constraint firstItem="dmC-zK-EYN" firstAttribute="width" secondItem="fWp-qX-QcE" secondAttribute="width" id="WWo-Tk-IvK"/>
+                            <constraint firstItem="dmC-zK-EYN" firstAttribute="top" secondItem="i1I-5i-RRY" secondAttribute="bottom" constant="8" id="WaT-iA-IQP"/>
+                            <constraint firstItem="fWp-qX-QcE" firstAttribute="top" secondItem="dmC-zK-EYN" secondAttribute="bottom" constant="50" id="f2g-Gf-5iv"/>
+                            <constraint firstItem="dmC-zK-EYN" firstAttribute="centerX" secondItem="ilf-p7-aWk" secondAttribute="centerX" id="kve-vb-dMA"/>
+                            <constraint firstItem="dmC-zK-EYN" firstAttribute="top" secondItem="ilf-p7-aWk" secondAttribute="bottom" constant="50" id="lMZ-7U-hei"/>
+                            <constraint firstItem="fWp-qX-QcE" firstAttribute="top" secondItem="h1q-Ki-tcc" secondAttribute="bottom" constant="8" id="nAI-LI-lYu"/>
+                            <constraint firstItem="ilf-p7-aWk" firstAttribute="top" secondItem="hrR-DC-yGU" secondAttribute="bottom" constant="141" id="oRD-12-8Bk"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fBd-v0-CPF">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="eav-iD-l6V">
@@ -109,10 +165,15 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="blueSlider" destination="fWp-qX-QcE" id="ljS-Pw-Hhy"/>
+                        <outlet property="greenSlider" destination="dmC-zK-EYN" id="CDd-tD-OXK"/>
+                        <outlet property="redSlider" destination="ilf-p7-aWk" id="vpC-NS-yeh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRH-VP-mRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2077" y="402"/>
+            <point key="canvasLocation" x="2161" y="402"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Jpt-VW-21k">
